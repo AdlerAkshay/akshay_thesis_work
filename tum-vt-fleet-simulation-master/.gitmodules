@@ -1,0 +1,10 @@
+[submodule "FleetPy"]
+	path = FleetPy
+	url = https://github.com/TUM-VT/FleetPy
+	branch = main
+
+[submodule "mobivi-front"]
+	path = dev/mobivi-front
+	url = https://gitlab.lrz.de/mpeksa/mobivi-front
+	branch = master
+

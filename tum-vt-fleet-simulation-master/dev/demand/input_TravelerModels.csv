@@ -1,0 +1,11 @@
+Input_Parameter_Name,Parameter_Value
+#1,mod-accept/reject
+user_min_wait_time,
+user_max_wait_time,
+user_max_constant_detour_time,
+user_max_detour_time_factor,
+#2,mode-choice and control objective function
+value_of_time,0.45
+pt_transfer_penalty,80
+private_vehicle_full_costs_per_m,6.6
+private_vehicle_mode_choice_intercept,

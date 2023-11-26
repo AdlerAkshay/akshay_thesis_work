@@ -1,0 +1,17 @@
+Input_Parameter_Name,Parameter_Value
+op_min_wait_time,0
+op_max_wait_time,360
+op_max_detour_time_factor,40
+op_add_constant_detour_time,
+op_max_constant_detour_time,
+op_min_detour_time_window,
+op_const_boarding_time,30
+op_add_boarding_time,0
+op_base_fare,0
+op_distance_fare,0.1
+op_time_fare,0
+op_min_standard_fare,100
+op_util_surge_price_scale_dict,0:1.0;0.749:1.0;0.75:2.0;1.0:2.0
+op_zone_price_scale_dict,0:1.0;1:2.0
+op_vr_control_func_dict,func_key:total_distance
+op_max_vr_con,1000

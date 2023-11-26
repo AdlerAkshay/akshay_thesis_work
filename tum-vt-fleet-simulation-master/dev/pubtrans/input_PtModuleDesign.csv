@@ -1,0 +1,10 @@
+Input_Parameter_Name,Parameter_Value
+#1,standard_pt
+pt_base_fare,100
+pt_cost_per_km,0
+#2,specific_to_matrix
+pt_freq_scale,2
+pt_freq_scale_hours,6;7;8;9;15;16;17;18
+#3,specific_to_crowding
+nw_density_temporal_bin_size,60
+nw_density_avg_duration,300

@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+SET(CMAKE_C_COMPILER C:\\\\msys64\\\\mingw64\\\\bin\\\\gcc.exe)
+SET(CMAKE_CXX_COMPILER C:\\\\msys64\\\\mingw64\\\\bin\\\\g++.exe)
+set(MYPROGRAM_FILES ChGraph.cpp ChNetwork.cpp utils.cpp)
+add_executable(main main.cpp ${MYPROGRAM_FILES})
