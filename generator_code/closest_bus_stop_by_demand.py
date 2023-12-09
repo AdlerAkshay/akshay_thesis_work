@@ -23,6 +23,8 @@ def read_bus_stops_xml(bus_xml):
             id = bus_stop.get("id")
             lane_id = bus_stop.get("lane")
             lane_id = lane_id.split("_")
+            if not net.hasEdge(lane_id[0]):
+                continue
             bus_stops_dict[id] = lane_id[0]
     except NameError:
         print("error in reading xml \n exception thrown read_bus_stops_xml")
@@ -53,9 +55,6 @@ def use_network_shortest_path(from_edge_id):
     bus_stop = None
     try:
         for _, to_edge_id in bus_stops_dict.items():
-            if not net.hasEdge(to_edge_id):
-                continue
-
             from_edge_obj = net.getEdge(from_edge_id)
             to_edge_obj = net.getEdge(to_edge_id)
 
