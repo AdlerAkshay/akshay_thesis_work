@@ -65,21 +65,33 @@ def use_network_shortest_path(from_edge_id):
     except NameError:
         raise TypeError("Net getShortestPath failed")
 
-    return shortest_path
-
+    if bus_stop is not None:
+        bus_tuple = bus_stop[0]
+        last_index = len(bus_tuple) - 1
+        edge_id_o = bus_tuple[last_index]
+        return edge_id_o.getID()
+    else:
+        return -1
 
 def cal_closest_bus_stop(demand_file_inter_csv, final_demand_file):
     try:
-        with open(demand_file_inter_csv, newline='') as csv_file:
+        with open(demand_file_inter_csv, newline='') as csv_file, open(final_demand_file, "a", newline='') as f_output:
             reader = csv.DictReader(csv_file)
+            writer = csv.writer(f_output)
+            header = next(reader)
+            writer.writerow(header)
 
             # Iterate over the rows in the CSV file
             for row in reader:
                 start_edge_id = node_id_to_edge_id[row['start']]
                 end_edge_id = node_id_to_edge_id[row['end']]
+                req_id = row['request_id']
+                req_time = row['rq_time']
 
-                closest_starting_bus_stop_edge_id = use_network_shortest_path(start_edge_id)
-                closest_starting_bus_stop_edge_id = use_network_shortest_path(end_edge_id)
+                closest_starting_bus_stop_edge_id = edge_id_to_node_id[use_network_shortest_path(start_edge_id)]
+                closest_ending_bus_stop_edge_id = edge_id_to_node_id[use_network_shortest_path(end_edge_id)]
+
+                writer.write({closest_starting_bus_stop_edge_id, closest_ending_bus_stop_edge_id, req_time, req_id})
 
     except NameError:
         print("cal_closest_bus_stop exception thrown")
