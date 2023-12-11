@@ -3,12 +3,14 @@ import sys
 import os
 from threading import Thread
 import xml.etree.ElementTree as ET
+import time
 
-sys.path.append(os.path.join(os.environ["SUMO_HOME"], "tools"))
+
+
+sys.path.append("/Users/rakeshsadhu/dev/python_env/lib/python3.11/site-packages/sumolib")
 import sumolib  # noqa
 
-net = sumolib.net.readNet("C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\tum-vt-fleet-simulation-master"
-                          "\\FleetPy\\studies\\SUMO_example_study\\SUMO_model\\ingolstadt_24h.net.xml")
+net = sumolib.net.readNet("/Users/rakeshsadhu/dev/akshay_thesis_work/generator_code/data/ingolstadt_24h.net.xml")
 
 bus_stops_dict = {}
 node_id_to_edge_id = {}
@@ -75,7 +77,7 @@ def use_network_shortest_path(from_edge_id):
 
 def cal_closest_bus_stop(demand_file_inter_csv, final_demand_file):
     try:
-        with open(demand_file_inter_csv, newline='') as csv_file, open(final_demand_file, "a", newline='') as f_output:
+        with open(demand_file_inter_csv, newline='') as csv_file, open(final_demand_file, "w", newline='') as f_output:
             reader = csv.DictReader(csv_file)
             writer = csv.writer(f_output)
             header = next(reader)
@@ -88,10 +90,22 @@ def cal_closest_bus_stop(demand_file_inter_csv, final_demand_file):
                 req_id = row['request_id']
                 req_time = row['rq_time']
 
-                closest_starting_bus_stop_edge_id = edge_id_to_node_id[use_network_shortest_path(start_edge_id)]
-                closest_ending_bus_stop_edge_id = edge_id_to_node_id[use_network_shortest_path(end_edge_id)]
+                start_time = time.time()
 
-                writer.write({closest_starting_bus_stop_edge_id, closest_ending_bus_stop_edge_id, req_time, req_id})
+                closest_starting_bus_stop_edge_id = edge_id_to_node_id[use_network_shortest_path(start_edge_id)]
+
+                end_time = time.time()
+                print(f"Time taken to find start node: {end_time - start_time} seconds")
+
+
+                start_time = time.time()
+                closest_ending_bus_stop_edge_id = edge_id_to_node_id[use_network_shortest_path(end_edge_id)]
+                end_time = time.time()
+
+                print(f"Time taken to find end node: {end_time - start_time} seconds")
+                writer.writerow([closest_starting_bus_stop_edge_id, closest_ending_bus_stop_edge_id, req_time, req_id])
+
+
 
     except NameError:
         print("cal_closest_bus_stop exception thrown")
@@ -100,15 +114,11 @@ def cal_closest_bus_stop(demand_file_inter_csv, final_demand_file):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("get your necessary files right and try again")
-        print("you would need following")
-        print("bus stops xml, node_edge_id_csv, demand_file, name_of_final_file")
-        exit(-1)
 
-    ret = read_bus_stops_xml(sys.argv[1])
-    ret &= fill_in_necessary_data_structures(sys.argv[2])
-    ret &= cal_closest_bus_stop(sys.argv[3], sys.argv[4])
+
+    ret = read_bus_stops_xml("/Users/rakeshsadhu/dev/akshay_thesis_work/generator_code/data/23-07-19_pt_stops_gtfs_updated_net.add.xml")
+    ret &= fill_in_necessary_data_structures("/Users/rakeshsadhu/dev/akshay_thesis_work/generator_code/data/complete_nodes.csv")
+    ret &= cal_closest_bus_stop("/Users/rakeshsadhu/dev/akshay_thesis_work/generator_code/data/final_output.csv", "/Users/rakeshsadhu/dev/akshay_thesis_work/generator_code/data/demand_final_output.csv")
 
     if ret:
         print("successfully executed")
