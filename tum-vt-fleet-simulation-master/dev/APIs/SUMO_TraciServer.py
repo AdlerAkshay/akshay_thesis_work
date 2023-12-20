@@ -548,11 +548,12 @@ def run_simulation(fleetsim: SUMOcontrolledSim, sumo_edge_id_to_fs_edge, fs_edge
         drtsInSimulation = []
 
         # 4) get current network statistics
-        edge_to_current_tt_list = get_current_sumo_Network_travel_times(sumo_edge_id_to_fs_edge,
-                                                                        edge_to_current_tt_list, fs_edge_to_ff_tt)
+
 
         # 5) send new travel times to fleetsim
         if sim_time % update_travel_statistics_time_step == 0:
+            edge_to_current_tt_list = get_current_sumo_Network_travel_times(sumo_edge_id_to_fs_edge,
+                                                                            edge_to_current_tt_list, fs_edge_to_ff_tt)
             new_travel_times = update_edge_traveltimes(edge_to_current_tt_list, sumo_edge_id_to_fs_edge, sim_time,
                                                        resultsPath)
             edge_to_current_tt_list = {}

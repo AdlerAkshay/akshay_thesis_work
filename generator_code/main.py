@@ -62,10 +62,17 @@ class DemandFileGenerator:
                 if e_edge_id in node_dict:
                     end = node_dict[e_edge_id]
 
-                final_str = str(start['node_index']) + "," + str(
-                   end['node_index']) + "," + request_time + "," + request_id
-                csv_file.write(final_str)
-                csv_file.write("\n")
+                if start is not None and end is not None:
+                    final_str = f"{start.get('node_index')},{end.get('node_index')},{request_time},{request_id}"
+                    csv_file.write(final_str)
+                    csv_file.write("\n")
+                else:
+                    print(f"Warning: Start or end not found for ride_from={ride_from} and ride_to={ride_to}")
+
+                #final_str = str(start['node_index']) + "," + str(
+                 #  end['node_index']) + "," + request_time + "," + request_id
+                #csv_file.write(final_str)
+                #csv_file.write("\n")
 
 
 if __name__ == "__main__":
