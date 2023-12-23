@@ -121,6 +121,8 @@ class ImprovedGenerator:
             last_index = len(bus_tuple) - 1
             edge_id_o = bus_tuple[last_index]
             return edge_id_o.getID(), shortest_path
+        else:
+            return None, None
 
     def cal_closest_bus_stop(self):
         extra_file = "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data\\extra_file.csv"
@@ -145,6 +147,9 @@ class ImprovedGenerator:
 
                     nearest_start_bus_stop_edge_id, walking_distance_to_stop = self._use_network_shortest_path(start_edge_id)
                     nearest_end_bus_stop_edge_id, walking_distance_from_stop = self._use_network_shortest_path(end_edge_id)
+
+                    if nearest_start_bus_stop_edge_id is None or nearest_end_bus_stop_edge_id is None:
+                        continue
 
                     if nearest_start_bus_stop_edge_id in self.edge_id_to_node_id and \
                             nearest_end_bus_stop_edge_id in self.edge_id_to_node_id:

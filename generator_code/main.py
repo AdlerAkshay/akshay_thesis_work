@@ -28,14 +28,21 @@ class DemandFileGenerator:
         root_node = tree.getroot()
         for person_element in root_node.findall('person'):
             request_id = person_element.get('id')
-            request_id = request_id.split("_")
+            r_id = None
+            if "_" in  request_id:
+                request_id = request_id.split("_")
+                r_id = request_id[1]
+            else:
+                r_id = request_id
+
             request_time = person_element.get('depart')
 
             ride_element = person_element.find('ride')
             ride_from = ride_element.get('from')
             ride_to = ride_element.get('to')
-            temp_list = [request_id[1], request_time, ride_from, ride_to]
+            temp_list = [r_id, request_time, ride_from, ride_to]
             demand_request_dict.append(temp_list)
+
 
     def create_demand_request_csv(self, demand_request_csv_file):
 
