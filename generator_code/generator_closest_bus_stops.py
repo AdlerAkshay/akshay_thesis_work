@@ -140,28 +140,29 @@ class ImprovedGenerator:
 
                 # Iterate over the rows in the CSV file
                 for row in reader:
-                    start_edge_id = self.node_id_to_edge_id[row['start']]
-                    end_edge_id = self.node_id_to_edge_id[row['end']]
-                    req_id = row['request_id']
-                    req_time = row['rq_time']
+                    if row['start'] in  self.node_id_to_edge_id:
+                        start_edge_id = self.node_id_to_edge_id[row['start']]
+                        end_edge_id = self.node_id_to_edge_id[row['end']]
+                        req_id = row['request_id']
+                        req_time = row['rq_time']
 
-                    nearest_start_bus_stop_edge_id, walking_distance_to_stop = self._use_network_shortest_path(start_edge_id)
-                    nearest_end_bus_stop_edge_id, walking_distance_from_stop = self._use_network_shortest_path(end_edge_id)
+                        nearest_start_bus_stop_edge_id, walking_distance_to_stop = self._use_network_shortest_path(start_edge_id)
+                        nearest_end_bus_stop_edge_id, walking_distance_from_stop = self._use_network_shortest_path(end_edge_id)
 
-                    if nearest_start_bus_stop_edge_id is None or nearest_end_bus_stop_edge_id is None:
-                        continue
+                        if nearest_start_bus_stop_edge_id is None or nearest_end_bus_stop_edge_id is None:
+                            continue
 
-                    if nearest_start_bus_stop_edge_id in self.edge_id_to_node_id and \
-                            nearest_end_bus_stop_edge_id in self.edge_id_to_node_id:
-                        my_row = self.edge_id_to_node_id[nearest_start_bus_stop_edge_id] + "," + \
-                                 self.edge_id_to_node_id[
-                                     nearest_end_bus_stop_edge_id] + "," + req_time + "," + req_id + "\n"
-                        f_output.write(my_row)
+                        if nearest_start_bus_stop_edge_id in self.edge_id_to_node_id and \
+                                nearest_end_bus_stop_edge_id in self.edge_id_to_node_id:
+                            my_row = self.edge_id_to_node_id[nearest_start_bus_stop_edge_id] + "," + \
+                                     self.edge_id_to_node_id[
+                                         nearest_end_bus_stop_edge_id] + "," + req_time + "," + req_id + "\n"
+                            f_output.write(my_row)
 
-                        my_row = my_row[:len(my_row) - 1] + "," + str(walking_distance_to_stop) + "," + str(walking_distance_from_stop) + "\n"
-                        f_new_file.write(my_row)
-                    else:
-                        print(f"{nearest_start_bus_stop_edge_id} and {nearest_end_bus_stop_edge_id} not found")
+                            my_row = my_row[:len(my_row) - 1] + "," + str(walking_distance_to_stop) + "," + str(walking_distance_from_stop) + "\n"
+                            f_new_file.write(my_row)
+                        else:
+                            print(f"{nearest_start_bus_stop_edge_id} and {nearest_end_bus_stop_edge_id} not found")
 
         except NameError:
             print("cal_closest_bus_stop exception thrown")
