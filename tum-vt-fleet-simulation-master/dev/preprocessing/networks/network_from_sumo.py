@@ -98,7 +98,7 @@ def create_nodes_and_edges_from_xml(xmlfile):
                     edges[edge_id]["distance"] = new_distance
                     controlEdges.append(edge_id)
 
-    # Add Connecting edges (within intersections)
+    #  Add Connecting edges (within intersections)
     for tag in root_node.findall('connection'):
         fromEdge = tag.get('from')
         # print(f'fromEdge {fromEdge}')

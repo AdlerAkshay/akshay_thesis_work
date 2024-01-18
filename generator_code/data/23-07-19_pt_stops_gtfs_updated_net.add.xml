@@ -516,6 +516,7 @@
     <trainStop id="IN_Nord_5" name="In Nord Gleis 5" lane="134536456#1_0" startPos="132.49" endPos="312.49"/>
     <trainStop id="IN_Nord_6" name="IN Nord Gleis 6" lane="-39023740_0" startPos="80.19" endPos="328.87" friendlyPos="true"/>
     <trainStop id="IN_Nord_7" name="IN Nord Gleis 7" lane="48088387#1_0" startPos="146.84" endPos="374.67"/>
-    <!-- Shapes -->
+    <!-- Shapes
     <poly id="001" color="red" fill="1" layer="2.00" shape="7055.272713,6803.108001 7035.272713,6823.108001 7075.272713,6823.108001 7055.272713,6843.108001"/>
+    -->
 </additional>

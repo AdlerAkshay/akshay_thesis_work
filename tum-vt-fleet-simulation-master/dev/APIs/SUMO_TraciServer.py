@@ -133,6 +133,7 @@ def setup_traci(sumo_config, results_path, sumoBinary, seed, sumo_fcd_output=Fal
     TripInfoPath = os.path.join(results_path, "SumoDumps", "TripInfo.xml")
     vehRoutePath = os.path.join(results_path, "SumoDumps", "vehRoutes.xml")
     collisionPath = os.path.join(results_path, "SumoDumps", "collisionPath.xml")
+    emissionsPath = os.path.join(results_path, "SumoDumps", "emissions.xml")
     statisticsPath = os.path.join(results_path, "SumoDumps", "statistics.xml")
     fcdPath = os.path.join(results_path, "SumoDumps", "fcd-output.xml")
     fullOutputPath = os.path.join(results_path, "FullOutput.xml")
@@ -141,8 +142,8 @@ def setup_traci(sumo_config, results_path, sumoBinary, seed, sumo_fcd_output=Fal
     sumo_cnfg_path = os.path.dirname(sumo_config)
     sumoCmd = [sumoBinary, "-c", sumo_config, "--collision.action", "warn",
                "--step-length", "1", "--time-to-teleport", "300", "--tripinfo-output", TripInfoPath,
-               "--vehroute-output", vehRoutePath, "--collision-output", collisionPath, "--statistic-output",
-               statisticsPath, "--start", "--seed", str(seed)]
+               "--vehroute-output", vehRoutePath, "--collision-output", collisionPath, "--emission-output",
+               emissionsPath, "--statistic-output", statisticsPath, "--start", "--seed", str(seed)]
     if sumo_fcd_output:
         sumoCmd += ["--fcd-output", fcdPath, "--fcd-output.geo"]
     if sumo_edge_output:

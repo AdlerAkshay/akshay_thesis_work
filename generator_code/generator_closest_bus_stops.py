@@ -1,7 +1,6 @@
 import csv
 import sys
 import os
-# from threading import Thread
 import threading
 import xml.etree.ElementTree as ET
 import time
@@ -96,7 +95,7 @@ class ImprovedGenerator:
 
     def _use_network_shortest_path(self, from_edge_id):
 
-        shortest_path = sys.maxsize
+        shortest_path = 1000
         bus_stop = None
 
         neighbouring_bus_stops = self._found_bus_stops(from_edge_id)
@@ -113,7 +112,7 @@ class ImprovedGenerator:
 
                 tmp = self.net.getShortestPath(from_edge_obj, to_edge_obj)
                 if tmp[1] < shortest_path:
-                    shortest_path = tmp[1]
+                    shortest_path = int(tmp[1])
                     bus_stop = tmp
 
         if bus_stop is not None:
@@ -125,7 +124,8 @@ class ImprovedGenerator:
             return None, None
 
     def cal_closest_bus_stop(self):
-        extra_file = "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data\\extra_file.csv"
+        extra_file = "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data" \
+                     "\\Random_Walking_S2S_Distance_600.csv "
         try:
             with open(self.demand_file_inter_csv, newline='') as csv_file, \
                     open(self.final_demand_file, "w", newline='') as f_output, \
@@ -140,7 +140,7 @@ class ImprovedGenerator:
 
                 # Iterate over the rows in the CSV file
                 for row in reader:
-                    if row['start'] in  self.node_id_to_edge_id:
+                    if row['start'] in self.node_id_to_edge_id:
                         start_edge_id = self.node_id_to_edge_id[row['start']]
                         end_edge_id = self.node_id_to_edge_id[row['end']]
                         req_id = row['request_id']
@@ -174,13 +174,15 @@ class ImprovedGenerator:
 if __name__ == "__main__":
     ig = ImprovedGenerator("C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\ingolstadt_24h.net.xml",
-                           "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data\\23-07"
-                           "-19_pt_stops_gtfs_updated_net.add.xml",
+                           "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
+                           "\\stops_at_600.add.xml",
                            "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\Allnodes.csv",
                            "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\MiD_N2N_Demand.csv",
                            "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\Request.csv")
+
+
 
     ig.start()
