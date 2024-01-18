@@ -1,4 +1,4 @@
-vtype_name_full,default_vehtype
+vtype_name_full,taxi
 maximum_passengers,4
 daily_fix_cost [cent],2500
 per_km_cost [cent],25
