@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://sumo.dlr.de/xsd/additional_file.xsd" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+  <busStop id="101" name="Klinik - Dr. Reiser" lane="233673410#0_2" startPos="11.41" endPos="21.41"/>
+  <busStop id="102" name="Klinik - Dr. Reiser" lane="-233673410#0_2" startPos="3.09" endPos="13.09"/>
+  <busStop id="103401" name="Altwasserweg" lane="-164051425#2_1" startPos="144.43" endPos="170.62"/>
+  <busStop id="103402" name="Altwasserweg " lane="164051425#2_1" startPos="12.42" endPos="38.42" friendlyPos="true"/>
+  <busStop id="104201" name="Bezirkssportanlage Nord-West" lane="24634510#21_1" startPos="2.43" endPos="28.43" friendlyPos="true"/>
+  <busStop id="104203" name="Bezirkssportanlage Nord-West" lane="201238726#0_0" startPos="7.91" endPos="17.91"/>
+  <busStop id="10599" name="Boschstraße" lane="-22486129#0_1" startPos="132.98" endPos="158.98" friendlyPos="true"/>
+  <busStop id="10801" name="Breslauer Straße" lane="201953161#7_1" startPos="77.53" endPos="103.53" friendlyPos="true"/>
+  <busStop id="10902" name="Brodmühlweg" lane="-173169611#2_2" startPos="94.85" endPos="104.85" friendlyPos="true"/>
+  <busStop id="11001" name="Brückenkopf" lane="-32923867#4_2" startPos="5.45" endPos="31.45" friendlyPos="true"/>
+  <busStop id="11002" name="Brückenkopf" lane="32923867#4_2" startPos="9.92" endPos="35.92" friendlyPos="true"/>
+  <busStop id="11301" name="Buchnerstraße" lane="201926265#5_1" startPos="0.30" endPos="26.30" friendlyPos="true"/>
+  <busStop id="11302" name="Buchnerstraße" lane="-201926265#5_1" startPos="47.20" endPos="73.20" friendlyPos="true"/>
+  <busStop id="118201" name="Lenting, Blockhaus" lane="11940927#5_1" startPos="124.73" endPos="150.73" friendlyPos="true"/>
+  <busStop id="118202" name="Lenting, Blockhaus" lane="-11940927#5_1" startPos="404.01" endPos="430.01" friendlyPos="true"/>
+  <busStop id="12601" name="Linnestraße" lane="-233675413#3_2" startPos="56.92" endPos="66.92" friendlyPos="true"/>
+  <busStop id="12602" name="Buxheimer Weg" lane="233675413#3_2" startPos="8.96" endPos="18.96" friendlyPos="true"/>
+  <busStop id="12701" name="Canisiusstraße" lane="-201286890#6_1" startPos="15.57" endPos="41.57" friendlyPos="true"/>
+  <busStop id="12702" name="Canisiusstraße" lane="201286890#6_1" startPos="23.75" endPos="49.75" friendlyPos="true"/>
+  <busStop id="13201" name="Degenhartstraße" lane="-18813598#2_2" startPos="68.75" endPos="78.75"/>
+  <busStop id="13202" name="Degenhartstraße" lane="18813598#1_2" startPos="24.79" endPos="34.79"/>
+  <busStop id="13401" name="Kösching-Desching, Raffineriesiedlung " lane="-204095914#0_1" startPos="48.47" endPos="74.47" friendlyPos="true"/>
+  <busStop id="13402" name="Kösching-Desching, Raffineriesiedlung " lane="204095914#0_1" startPos="100.03" endPos="126.03" friendlyPos="true"/>
+  <busStop id="13501" name="Deschinger Straße " lane="25638761#0_1" startPos="6.98" endPos="19.98" friendlyPos="true"/>
+  <busStop id="13502" name="Deschinger Straße" lane="-39861708#1_2" startPos="5.34" endPos="15.34" friendlyPos="true"/>
+  <busStop id="145901" name="Audi - GVZ Halle H" lane="-320733910#1_2" startPos="62.32" endPos="76.14"/>
+  <busStop id="145902" name="Audi - GVZ Halle H" lane="320733910#1_2" startPos="1.09" endPos="20.65"/>
+  <busStop id="146701" name="Technische Hochschule" lane="-145069303#4_1" startPos="21.28" endPos="31.28"/>
+  <busStop id="146702" name="Technische Hochschule" lane="145069303#4_1" startPos="18.83" endPos="28.83"/>
+  <busStop id="147302" name="Wielandstraße" lane="29027727#9_2" startPos="65.42" endPos="75.42"/>
+  <busStop id="148199" name="Existenzgründerzentrum" lane="-23258631#5_1" startPos="22.39" endPos="32.39"/>
+  <busStop id="156198" name="Schwäblstraße" lane="-48742425#3_2" startPos="59.79" endPos="75.09"/>
+  <busStop id="156199" name="Schwäblstraße" lane="48742425#3_2" startPos="34.13" endPos="50.40"/>
+  <busStop id="156302" name="Friedhof, Oberhaunstadt " lane="-32203888#1_1" startPos="35.56" endPos="61.56" friendlyPos="true"/>
+  <busStop id="157401" name="St. Markus" lane="266607804#1_2" startPos="55.10" endPos="65.10" friendlyPos="true"/>
+  <busStop id="157402" name="St. Markus" lane="-266607803#1_2" startPos="49.31" endPos="59.31" friendlyPos="true"/>
+  <busStop id="173101" name="Speckweg" lane="675757785#2_1" startPos="42.60" endPos="75.03" friendlyPos="true"/>
+  <busStop id="173102" name="Speckweg" lane="-675757785#3_1" startPos="181.90" endPos="207.90" friendlyPos="true"/>
+  <busStop id="180302" name="Linnestraße" lane="136728344#4.72_1" startPos="44.34" endPos="66.77"/>
+  <busStop id="180802" name="Gaimersheim, Gewerbegebiet" lane="-161783480_1" startPos="0.00" endPos="13.00" friendlyPos="true"/>
+  <busStop id="18301" name="Ettringer Straße" lane="-315358242#3_2" startPos="4.51" endPos="27.27"/>
+  <busStop id="18302" name="Ettinger Straße" lane="315358242#4_2" startPos="39.27" endPos="58.08"/>
+  <busStop id="184097" name="Audi - Sportpark" lane="387031636.74_0" startPos="48.64" endPos="60.59"/>
+  <busStop id="184099" name="Audi - Sportpark" lane="387031636_0" startPos="0.00" endPos="69.54" friendlyPos="true"/>
+  <busStop id="184901" name="Gaimersheim, Bahnhof" lane="E3_0" startPos="83.35" endPos="93.35"/>
+  <busStop id="184902" name="Gaimersheim, Bahnhof" lane="-E3_0" startPos="29.38" endPos="39.38"/>
+  <busStop id="185001" name="Audi Tor 3" lane="-542806889_2" startPos="48.34" endPos="58.34" friendlyPos="true"/>
+  <busStop id="185002" name="Audi Tor 3" lane="542806889_2" startPos="11.56" endPos="21.56" friendlyPos="true"/>
+  <busStop id="185301" name="Audi - T 35 / T 23" lane="-335392792_0" startPos="77.85" endPos="87.85"/>
+  <busStop id="185302" name="Audi - T 35 / T 23" lane="335392792_0" startPos="17.43" endPos="27.43"/>
+  <busStop id="185699" name="Lentinger Straße" lane="-127076895_1" startPos="0.00" endPos="29.49" friendlyPos="true"/>
+  <busStop id="18601" name="Feldschlößl" lane="4942575#0_2" startPos="63.34" endPos="73.34"/>
+  <busStop id="18602" name="Feldschlößl" lane="31342350#4_2" startPos="99.83" endPos="109.83"/>
+  <busStop id="186301" name="Am Eichelanger" lane="22603941#3_1" startPos="18.14" endPos="44.14" friendlyPos="true"/>
+  <busStop id="186302" name="Am Eichelanger" lane="-147014252#2_1" startPos="21.28" endPos="47.28" friendlyPos="true"/>
+  <busStop id="189299" name="Steigerwaldstraße " lane="-307536275#3_1" startPos="537.29" endPos="563.29" friendlyPos="true"/>
+  <busStop id="21601" name="Gaimersheim, Mittlere Heide " lane="-307562643#0_1" startPos="60.12" endPos="86.12" friendlyPos="true"/>
+  <busStop id="21602" name="Gaimersheim, Mittlere Heide " lane="379795383_1" startPos="0.00" endPos="20.10" friendlyPos="true"/>
+  <busStop id="23301" name="Geibelstraße" lane="202070429#11_2" startPos="73.46" endPos="83.46"/>
+  <busStop id="23302" name="Geibelstraße" lane="-202070429#11_2" startPos="170.74" endPos="180.74"/>
+  <busStop id="25999" name="Grundnerstraße" lane="391029014#0_1" startPos="0.00" endPos="17.88" friendlyPos="true"/>
+  <busStop id="26601" name="Hackerstraße " lane="146973236#14_1" startPos="29.86" endPos="55.86" friendlyPos="true"/>
+  <busStop id="26602" name="Hackerstraße " lane="-146973236#13_1" startPos="0.00" endPos="25.20" friendlyPos="true"/>
+  <busStop id="28401" name="Harderstraße " lane="-32924041#0_1" startPos="0.00" endPos="19.25" friendlyPos="true"/>
+  <busStop id="28402" name="Harderstraße " lane="32924041#0_1" startPos="0.72" endPos="26.72" friendlyPos="true"/>
+  <busStop id="3801" name="Am Auwaldsee " lane="-203971377#0_1" startPos="147.89" endPos="173.89" friendlyPos="true"/>
+  <busStop id="3802" name="Am Auwaldsee " lane="42444460#4_1" startPos="17.80" endPos="43.80" friendlyPos="true"/>
+  <busStop id="38201" name="Keplerstraße" lane="201201953#4_2" startPos="4.05" endPos="23.20"/>
+  <busStop id="50501" name="Marienplatz" lane="54154971_1" startPos="7.87" endPos="33.87" friendlyPos="true"/>
+  <busStop id="50502" name="Marienplatz" lane="-54154969#2_1" startPos="4.36" endPos="30.36" friendlyPos="true"/>
+  <busStop id="51901" name="Messerschmittstraße " lane="146973225#1.37_0" startPos="12.08" endPos="38.08" friendlyPos="true"/>
+  <busStop id="51902" name="Messerschmittstraße " lane="-146973225#1_0" startPos="9.25" endPos="35.25" friendlyPos="true"/>
+  <busStop id="53999" name="Niederfeld" lane="38434578_1" startPos="74.81" endPos="100.81" friendlyPos="true"/>
+  <busStop id="57302" name="Paul-Wegmann-Halle" lane="32530108#5_1" startPos="27.53" endPos="53.53" friendlyPos="true"/>
+  <busStop id="69102" name="Stadtwerke / Continental" lane="28639688#2_2" startPos="3.07" endPos="13.07"/>
+  <busStop id="70901" name="Tassilostraße" lane="20266195#3_1" startPos="0.54" endPos="26.54" friendlyPos="true"/>
+  <busStop id="70902" name="Tassilostraße" lane="-20266195#3_1" startPos="0.00" endPos="24.11" friendlyPos="true"/>
+  <busStop id="73801" name="Aubürgerstraße" lane="-200908887_1" startPos="30.92" endPos="40.92"/>
+  <busStop id="73802" name="Aubürgerstraße" lane="200908887_1" startPos="10.04" endPos="20.04"/>
+  <busStop id="7401" name="Audi - Tor 10" lane="-32061997_2" startPos="12.99" endPos="38.99" friendlyPos="true"/>
+  <busStop id="7402" name="Audi - Tor 10" lane="32061997.96_0" startPos="0.00" endPos="18.19" friendlyPos="true"/>
+  <busStop id="7701" name="Audi - August-Horch-Straße" lane="-1040258009_0" startPos="37.75" endPos="54.53"/>
+  <busStop id="7702" name="Audi - August-Horch-Straße" lane="834006805#1_0" startPos="0.65" endPos="35.98"/>
+  <busStop id="85001" name="Johann-Michael-Sailer-Straße" lane="201201940#0_1" startPos="80.74" endPos="106.74" friendlyPos="true"/>
+  <busStop id="85002" name="Johann-Michael-Sailer-Straße" lane="-201201940#0_1" startPos="7.55" endPos="33.55" friendlyPos="true"/>
+  <trainStop id="GAIM_2" name="GAimersheim Gleis 2" lane="42738696#0_0" startPos="226.09" endPos="384.56"/>
+  <trainStop id="GAIM_3" name="Gaimersheim Gleis 3" lane="42738703#0_0" startPos="260.61" endPos="420.61"/>
+  <poly id="001" color="red" fill="1" layer="2.00" shape="7055.272713,6803.108001 7035.272713,6823.108001 7075.272713,6823.108001 7055.272713,6843.108001"/>
+</additional>
