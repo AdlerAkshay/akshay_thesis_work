@@ -175,14 +175,12 @@ if __name__ == "__main__":
     ig = ImprovedGenerator("C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\ingolstadt_24h.net.xml",
                            "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
-                           "\\stops_at_600.add.xml",
+                           "\\23-07-19_pt_stops_gtfs_updated_net.add.xml",
                            "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\Allnodes.csv",
                            "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\MiD_N2N_Demand.csv",
                            "C:\\Users\\Audi\\Desktop\\thesis_work\\akshay_thesis_work\\generator_code\\data"
                            "\\Request.csv")
-
-
 
     ig.start()
