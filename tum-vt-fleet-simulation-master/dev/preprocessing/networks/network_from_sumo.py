@@ -48,7 +48,21 @@ def create_nodes_and_edges_from_xml(xmlfile):
             if new_from_node is None:
                 continue
 
-            new_from_node = tag.get('from')
+            at_least_one_valid = False
+
+            children_using_findall = tag.findall('*')
+            for lane in children_using_findall:
+                allowed = lane.get('allow')
+                disallowed = lane.get('disallow')
+                if allowed is not None and "taxi" not in allowed or disallowed is not None and "taxi" in disallowed:
+                    continue
+                else:
+                    at_least_one_valid = True
+                    break
+
+            if at_least_one_valid is False:
+                continue
+
             nodes[f"S_{new_edgeID}"] = {"node_index": node_index, "source_node_id": new_from_node}
             try:
                 node_source_id_to_node_indices[new_from_node].append(f"S_{new_edgeID}")
@@ -67,6 +81,7 @@ def create_nodes_and_edges_from_xml(xmlfile):
             edges[new_edgeID] = {"from_node": node_index - 2, "to_node": node_index - 1, "source_edge_id": new_edgeID}
 
     controlEdges = []
+
     for tag in root_node.findall('edge/lane'):
         lane_id = tag.get('id')
         lane_id = lane_id.split("_")
@@ -78,11 +93,12 @@ def create_nodes_and_edges_from_xml(xmlfile):
                 new_distance = float(tag.get('length'))
                 speed = float(tag.get('speed'))
                 new_traveltime = new_distance / speed
-                edges[edge_id]["travel_time"] = new_traveltime
-                edges[edge_id]["distance"] = new_distance
-                controlEdges.append(edge_id)
+                if edge_id in edges:
+                    edges[edge_id]["travel_time"] = new_traveltime
+                    edges[edge_id]["distance"] = new_distance
+                    controlEdges.append(edge_id)
 
-    # Add Connecting edges (within intersections)
+    #  Add Connecting edges (within intersections)
     for tag in root_node.findall('connection'):
         fromEdge = tag.get('from')
         # print(f'fromEdge {fromEdge}')
@@ -96,6 +112,10 @@ def create_nodes_and_edges_from_xml(xmlfile):
             # print(f'fromEdge {fromEdge}')
             # print(f"toEdge {toEdge}")
             newInternalEdgeID = 'i_' + str(fromEdge) + '_' + str(toEdge)
+
+            if f"E_{fromEdge}" not in nodes or f"S_{toEdge}" not in nodes:
+                continue
+
             from_node_index = nodes[f"E_{fromEdge}"]["node_index"]
             to_node_index = nodes[f"S_{toEdge}"]["node_index"]
             # print(from_node_index, to_node_index)
@@ -114,6 +134,8 @@ def create_nodes_and_edges_from_xml(xmlfile):
             pos_x = tag.get('x')
             pos_y = tag.get('y')
 
+            if source_node_id not in node_source_id_to_node_indices:
+                continue
             for node in node_source_id_to_node_indices[source_node_id]:
                 nodes[node]["pos_x"] = float(pos_x)
                 nodes[node]["pos_y"] = float(pos_y)
