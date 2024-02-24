@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-02-16 10:15:58 by Eclipse SUMO GUI Version 1.18.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\SUMO_model\ingolstadt_24h.net.xml"/>
+        <route-files value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\SUMO_model\23-07-19_motorized_routes_2020-09-16_24h_updated_net_final.xml"/>
+        <additional-files value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\SUMO_model\tlLogics_WAUT_2020-09-16_24h.add.xml,C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\SUMO_model\ vehicleTypes.xml,C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\SUMO_model\ Stops.add.xml"/>
+    </input>
+
+    <output>
+        <emission-output value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\results\SUMO_FLEETPY_SIM\SumoDumps\emissions.xml"/>
+        <tripinfo-output value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\results\SUMO_FLEETPY_SIM\SumoDumps\TripInfo.xml"/>
+        <vehroute-output value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\results\SUMO_FLEETPY_SIM\SumoDumps\vehRoutes.xml"/>
+        <collision-output value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\results\SUMO_FLEETPY_SIM\SumoDumps\collisionPath.xml"/>
+        <statistic-output value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\results\SUMO_FLEETPY_SIM\SumoDumps\statistics.xml"/>
+    </output>
+
+    <time>
+        <begin value="21600"/>
+        <end value="32400"/>
+        <step-length value="1"/>
+    </time>
+
+    <processing>
+        <ignore-junction-blocker value="15"/>
+        <collision.action value="warn"/>
+        <time-to-teleport value="300"/>
+        <max-depart-delay value="100"/>
+    </processing>
+
+    <routing>
+        <persontrip.transfer.taxi-walk value="allJunctions"/>
+        <persontrip.transfer.walk-taxi value="allJunctions"/>
+        <device.rerouting.probability value="0.2"/>
+    </routing>
+
+    <taxi_device>
+        <device.taxi.dispatch-algorithm value="traci"/>
+        <device.taxi.idle-algorithm value="taxistand"/>
+    </taxi_device>
+
+    <traci_server>
+        <remote-port value="60317"/>
+    </traci_server>
+
+    <random_number>
+        <seed value="123"/>
+    </random_number>
+
+    <gui_only>
+        <gui-settings-file value="C:\Users\Audi\Desktop\thesis_work\akshay_thesis_work\tum-vt-fleet-simulation-master\FleetPy\studies\SUMO_example_study\SUMO_model\gui_settings.settings.xml"/>
+        <start value="true"/>
+    </gui_only>
+
+</configuration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
